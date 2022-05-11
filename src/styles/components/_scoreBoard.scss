@@ -1,0 +1,40 @@
+@use '../global/' as g;
+@use '../utils/' as u;
+
+.score-board {
+  border: u.rem(3) solid g.$Header-Outline;
+  border-radius: u.rem(10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: u.rem(10) u.rem(10) u.rem(10) u.rem(20);
+  margin-top: u.rem(30);
+
+  img {
+    width: u.rem(100);
+  }
+
+  &__content {
+    background-color: white;
+    padding: u.rem(10) u.rem(20);
+    text-align: center;
+    border-radius: u.rem(5);
+
+    p {
+      text-transform: uppercase;
+      color: g.$Score-Text;
+      letter-spacing: u.rem(1);
+      font-size: u.rem(12);
+    }
+
+    h1 {
+      color: g.$Dark-Text;
+      font-size: u.rem(40);
+    }
+  }
+
+  @include u.breakpoint-up(medium) {
+    width: 50%;
+    margin-inline: auto;
+  }
+}

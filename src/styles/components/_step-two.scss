@@ -1,0 +1,117 @@
+@use '../utils/' as u;
+@use '../global/' as g;
+
+.game-play {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-items: center;
+  align-items: center;
+  margin-top: u.rem(50);
+
+  >div {
+    position: static;
+  }
+
+  .empty-circle {
+    width: u.rem(100);
+    height: u.rem(100);
+    border-radius: 50%;
+    background-color: hsl(237,49%,15%);
+    opacity: 0.4;
+  }
+  
+  .word {
+    text-transform: uppercase;
+    color: white;
+    margin-top: u.rem(30);
+  }
+  .comment {
+    color: white;
+    grid-column: 1/3;
+    h1 {
+      font-size: u.rem(50);
+      text-transform: uppercase;
+      margin-top: u.rem(50);
+      margin-bottom: u.rem(10);
+    }
+    button {
+      width: 100%;
+      border-radius: 5px;
+      padding: u.rem(15) 0;
+      text-transform: uppercase;
+      border: none;
+      font-size: u.rem(14);
+      color: g.$Dark-Text;
+      font-weight: 600;
+    }
+  }
+
+  @include u.breakpoint-up(medium) {
+    grid-template-rows: auto auto;
+    grid-template-areas: 'mypick housepick'
+                          'myicon houseicon';
+    justify-content: center;
+    align-items: center;
+    gap: u.rem(30);
+
+    &.result {
+      grid-template-areas: 'mypick . housepick'
+                            'myicon comment houseicon';
+    }
+    
+                                          
+    
+    
+
+    .comment {
+      grid-area: comment;
+      margin-inline: u.rem(50);
+      justify-self: center;
+
+      h1 {
+        margin-top: 0;
+      }
+    }
+
+    >div:first-child {
+      grid-area: myicon;
+      align-self: center;
+    }
+
+    >div:nth-child(2) {
+      grid-area: houseicon;
+    }
+
+    >p:nth-of-type(1) {
+      grid-area: mypick;
+    }
+
+    >p:nth-of-type(2) {
+      grid-area: housepick;
+    }
+
+    p {
+      font-size: u.rem(30);
+    }
+  }
+}
+
+.rule {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  border-radius: u.rem(5);
+  padding: u.rem(10) u.rem(20);
+  max-width: u.rem(600);
+  margin-inline: auto;
+  margin-top: u.rem(50);
+  display: flex;
+  text-transform: uppercase;
+  justify-content: center;
+
+  @include u.breakpoint-up(medium) {
+    margin-inline: 0;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,68 @@
+@use '../utils/' as u;
+@use 'colors';
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: u.$font;
+  background-image: linear-gradient(to bottom, colors.$Radial-Gradient);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.container {
+  width: 90%;
+  margin-inline: auto;
+  position: relative;
+  height: 100%;
+}
+
+.rock {
+  @include u.image(colors.$Rock-Gradient);
+  right: 35%;
+  bottom: 10%;
+
+  @include u.breakpoint-up(medium) {
+    bottom: 15%;
+    right: 23%;
+  }
+}
+
+.scissors {
+  @include u.image(colors.$Scissors-Gradient);
+  right: 0;
+  @include u.breakpoint-up(medium) {
+    right: -18%;
+    top: 10%;
+  }
+}
+
+.paper {
+  @include u.image(colors.$Paper-Gradient);
+
+  @include u.breakpoint-up(medium) {
+    left: -20%;
+    top: 10%;
+  }
+}
+
+@include u.breakpoint-up(medium) {
+  .rule {
+    position: fixed;
+    top: 80%;
+    right: 10%;
+  }
+}
+
+button {
+  cursor: pointer;
+}

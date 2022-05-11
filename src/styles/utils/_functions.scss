@@ -1,0 +1,29 @@
+@use 'sass:math';
+@use 'sass:string';
+
+
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  }
+  @else {
+    @error "Pixel must not have unit"
+  }
+};
+
+@function em($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + em;
+  }
+  @else {
+    @error "Pixel must not have unit"
+  }
+};
+
+@mixin image($gradient) {
+  background-image: linear-gradient(180deg, string.unquote($gradient));
+  background-image: -moz-linear-gradient(180deg, string.unquote($gradient));
+  background-image: -o-linear-gradient(180deg, string.unquote($gradient));
+  background-image: -webkit-linear-gradient(180deg, string.unquote($gradient));
+  box-shadow: 1px 5px 2px string.unquote(string.slice($gradient,1,18));
+}

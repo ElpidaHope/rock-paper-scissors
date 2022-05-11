@@ -1,0 +1,18 @@
+@use '../utils/' as u;
+
+.step-one {
+  background-image: url('../../images/bg-triangle.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: u.rem(200);
+
+  margin-inline: auto;
+  margin-top: u.rem(50);
+  max-width: u.rem(300);
+  height: u.rem(300);
+  position: relative;
+
+  @include u.breakpoint-up(medium) {
+    height: u.rem(500);
+  }
+}
