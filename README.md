@@ -8,7 +8,6 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
 
@@ -25,12 +24,12 @@ Users should be able to:
 
 ### Screenshot
 
+![](./screenshot.png)
+
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://elpidaHope.github.io/rock-paper-scissors)
+- Live Site URL: [Live site](https://elpidaHope.github.io/rock-paper-scissors)
 
-## My process
 
 ### Built with
 
@@ -42,8 +41,10 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - Sass
 
+
 ## Author
 
 - Website - [Jesufemi Oladapo](https://jesufemi.dev)
-- Frontend Mentor - [@ElpidaHope](https://www.frontendmentor.io/profile/ElpidaHope)
+- Frontend Mentor - [@ElpidaHope](https://www.frontendmentor.io/profile/WlpidaHope)
 - Twitter - [@jesufemigan](https://www.twitter.com/jesufemigan)
+
